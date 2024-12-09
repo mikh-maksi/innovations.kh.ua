@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class="header">Тест по макроэкономике</h2>
+        <p id="question"></p>
+        <p><input type="radio" name="variant" id="y1"><span  id = "a1"></span></p>
+        <p><input type="radio" name="variant" id="y2"><span  id = "a2"></span></p>
+        <p><input type="radio" name="variant" id="y3"><span  id = "a3"></span></p>
+        <p><input type="radio" name="variant" id="y4"><span  id = "a4"></span></p>
+
+        <button id = "btn">Дать ответ</button>
+    <div class="right_div hidden" id = "right_div">
+        <p class="right" id="right">Правильный ответ</p>
+        <button id = "btn2">Следующий вопрос</button>
+    </div>
+    <div class="wrong_div hidden" id="wrong_div">
+        <p class="wrong" id="wrong">Неправильный ответ</p>
+        <button id = "btn1">Посмотреть ответ</button>
+        <p id="answer" class = "hidden"></p>
+    </div>
+
+    
+    </div>
+    <input type="hidden" value = "0" id = "n_question">
+    
+    <script src="js/js.js"></script>
+</body>
+</html>

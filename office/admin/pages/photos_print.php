@@ -1,0 +1,1 @@
+<? echo('photos_print.php');?>

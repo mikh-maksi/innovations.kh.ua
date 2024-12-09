@@ -1,0 +1,258 @@
+body 
+{
+	font-family: Verdana;
+	font-size: 10 ;
+}
+p 
+{
+	font-family: Verdana;
+	font-size: 10 ;
+}
+table {
+		font-family: Verdana;
+	font-size: 10 ;
+}
+
+a, a:active, a:focus, a:link, a:visited {
+	font-family: Verdana;
+	font-size: 10 ;
+	color: black;
+}
+a:hover {
+	font-family: Verdana;
+	font-size: 10 ;	color: #b0c0ec;
+}
+.mainfield
+{
+	background-color: #EEEEEE;
+	font-family: Verdana;
+}
+.buttonfield
+{background-color: #EEEEEE;}
+
+.brg
+{
+	background-color:#0000FF;
+	width: 75px;
+}
+.birga
+{
+	position: absolute;
+	top: 229;
+	right: 55.5%;
+	background-image: url(images/button.gif);
+	background-repeat: no-repeat;
+	padding: 5;
+	width: 110;
+	height: 32;
+	text-align: center;
+	padding-top: 12;
+	font-family: Arial;
+	font-size: 14;
+}
+.ecommerce
+{
+	position: absolute;
+	top: 229;
+	right: 43%;
+	background-image: url(images/button.gif);
+	background-repeat: no-repeat;
+	padding: 5;
+	width: 110;
+	height: 42;
+	text-align: center;
+	padding-top: 5;
+	padding-right: 10;
+	font-family: Arial;
+	font-size: 14;
+}
+.mlm
+{
+	position: absolute;
+	top: 229;
+	right: 31.5%;
+	background-image: url(images/button.gif);
+	background-repeat: no-repeat;
+	padding: 5;
+	padding-right: 5;
+	width: 110;
+	height: 32;
+	text-align: center;
+	padding-top: 12;
+	font-family: Arial;
+	font-size: 14;
+}
+
+.none {
+	font-family: Verdana;
+	font-size: 10;
+	color: AppWorkspace;
+}
+.nonemenu {
+	font-family: Verdana;
+	font-size: 10;
+	color: silver;
+}
+
+.nonelink {
+	font-family: Verdana;
+	font-size: 10 ;
+	color: silver;
+	text-decoration: underline;
+}
+.info
+{
+	margin: 5 5 5 5;
+}
+.news
+{
+	margin: 5 5 5 5;
+}
+
+
+.step
+{
+	background-color: #FFFFFF
+	
+}
+
+.d1
+{
+	border: 3px;
+	background: aqua;
+	border-width: thin;
+	border-style: solid;
+	float: left;
+	position: relative;
+	left: 50%;
+	margin: 0 10 10 0;
+}
+.d2
+{
+	border: 3px;
+	background: aqua;
+	border-width: thin;
+	border-style: solid;
+	float: left;
+	position: relative;
+	top: 0;
+}
+.d3
+{
+	border: 3px;
+	background: aqua;
+	border-width: thin;
+	border-style: solid;
+	float: left;
+	position: relative;
+	top: 0;
+}
+.toptext
+{
+
+	
+
+}
+.button
+{
+  width:220px;
+  height:44px;
+  margin: 0 0 0 0;
+  background-color:#FFFFFF;
+  text-align:center;
+  font-family: Verdana;
+  border: groove;
+
+}
+.buttontext
+{
+   font-size: 13px;
+
+}
+.buttontable
+{
+ 
+ 
+  text-align:center;
+}
+
+div.inner { margin: 0; background: #FFFFFF; padding: 10px; border:0; zoom:0;}
+div.outer { float: left; margin: 15px; background: #AAAAAA; padding: 10px; width: 24em }
+
+.newstext
+{
+	font-family: Verdana; 
+	text-align:center;
+}
+.newssmalltext
+{
+	font-family: Verdana;
+		font-size:9px;
+}
+.form-input
+{
+	width:300px;
+	
+}
+.form-textarea
+{
+	width:300px;
+	height:120px;
+	
+}
+
+.titlecategory
+{
+	background-color: #FBFBFB;
+	font-size: 14px;
+	padding: 5;
+}
+
+.tablecourses
+{
+padding: 0 0 0 0;
+}
+.paycourse
+{
+	width:300px;
+}
+.createform
+{
+	width:300px;
+
+	}
+.underblock
+{
+	height:25px;
+	background-color:#EEEEEE;
+}
+.investcourse
+{
+line-height:113%;
+
+}
+.partnerlink 
+{
+	font-family:Arial;
+	width:330px;
+	font-size:8pt;
+}
+.team_list
+{
+	width:330px;
+	text-align:left;
+}
+.month_table tr td
+{
+	text-align: center;
+}
+.month_lastnames
+{
+	text-align: left !important;
+}
+.head p{
+	font-size: 32px;
+}
+.menu{
+	border:1px solid;
+}

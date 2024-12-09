@@ -1,0 +1,4 @@
+AuthName "Test" 
+AuthType Basic
+AuthUserFile /home/innova14/innovations.kh.ua/www/ht/.htpasswd
+require user admin
