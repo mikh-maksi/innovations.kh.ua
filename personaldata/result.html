@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="registration1.css">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>    <script  src="https://code.jquery.com/jquery-3.4.0.min.js"  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="  crossorigin="anonymous"></script>    
+
+    <div class = "inpt " id = "inpt">
+            <div class="wrap">
+           <div class="row"> <span class="name">Ім'я:</span> <input id = "name"><br></div>
+            <div class="row"><span class="name">Прізвище:</span><input type="text" id = "lastname"><br></div>
+            <div class="row"><span class="name">Вік:</span> <input type = "text" id = "age"><br></div>
+            <div class="row"><span class="name">Курс:</span> <select name="course" id="course">
+            </select>
+                
+                
+                </div>
+           <div class="row"> <span class="name">Телефон:</span> <input type = "text" id = "tel" value = ''><br></div>
+           <div class="row"> <span class="name">Email:</span> <input type = "text" id = "email" value = ''><br></div>
+            <input id="picture" type="file" name="pic" /><br>
+            <button id="upload">Upload</button><br></div>
+        </div>
+    
+
+
+
+<script>
+$.getJSON("http://innovations.kh.ua/personaldata/back/coursesall.php",
+function(data){
+console.log(data);
+  $.each(data, function(i,item){
+    console.log(item);
+    var opt = document.createElement('option');   
+    
+    opt.value = item.id;
+    opt.innerHTML = item.name
+  
+    course.appendChild(opt);
+  });
+});
+
+
+
+
+
+    $('#upload').on('click', function() {
+    var file_data = $('#picture').prop('files')[0];
+    var name = $('#name').val();
+    var lastname = $('#lastname').val();
+    var age = $('#age').val();
+    var course = $('#course').val();
+    var tel = $('#tel').val();
+    var email = $('#email').val();
+    console.log(name);
+
+    $('#name').val("");
+    $('#lastname').val("");
+    $('#age').val("");
+    $('#course').val("");
+    $('#tel').val("");
+    $('#email').val("");
+
+
+    var form_data = new FormData();
+    form_data.append('name', name);
+    form_data.append('file', file_data);
+    form_data.append('lastname', lastname);
+    form_data.append('course', course);    
+    form_data.append('tel', tel);
+    form_data.append('email', email);
+    form_data.append('age', age);
+
+    console.log(form_data);
+    jQuery.ajax({
+                url: 'http://innovations.kh.ua/personaldata/personaldata.php',
+                dataType: 'text',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,
+                type: 'post',
+                success: function(php_script_response){
+                    //alert(php_script_response);
+                    $('#comments').val('');
+                    $('#counter').val('');
+                    $('#picture').val('');
+                    alert("Дані відправлено!");
+                }
+     });
+});
+</script>
+</body>
+</html>

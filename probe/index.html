@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name: <input type="text" id = "inpt_name"><br>
+    Tel: <input type="text" id = "inpt_tel"><br>
+    <button id = "btn">Send</button>
+    <script>
+    
+    var arr = [1,2,3,4];
+    var tel = '+380631312876';
+    
+    var obj= {};
+    async function f(ob) {
+        console.log(ob);
+            let response = fetch('post.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(ob)
+            });
+            let resp = await response;
+            return resp;
+        }
+
+
+    function sndresFnc(){
+        console.log(inpt_name.value);
+        console.log(inpt_name);
+        obj.name = inpt_name.value;
+        obj.tel = inpt_tel.value;
+        obj.arr = arr;
+        let resp = f(obj);
+        resp.then(onFulfilled);
+        // console.log(resp);
+        console.log(obj);
+    }
+    //sndresFnc();
+    function clck(){
+        console.log("clck");
+    }
+
+    function onFulfilled(dta){
+        console.log("onFulfilled");
+        console.log(dta);
+    }
+
+    btn.addEventListener("click",sndresFnc);
+    </script>
+</body>
+</html>

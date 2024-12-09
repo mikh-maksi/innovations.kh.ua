@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var obj= {};
+    async function f(ob) {
+            let response = fetch('post.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(ob)
+            });
+            let resp = await response;
+            return resp;
+        }
+
+
+    function sndresFnc(){
+        obj.name = "N";
+        obj.turnover = 2;
+        let resp = f(obj);
+        console.log(resp);
+        console.log(obj);
+    }
+    sndresFnc();
+
+
+
+    </script>
+</body>
+</html>

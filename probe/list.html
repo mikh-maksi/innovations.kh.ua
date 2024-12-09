@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Задание №1</h2>
+    <p>Описание задания №1</p>
+    <button id = "btn1">Выполнено</button>
+
+    <h2>Задание №2</h2>
+    <p>Описание задания №2</p>
+    <button id = "btn2">Выполнено</button>
+
+    <h2>Задание №3</h2>
+    <p>Описание задания №3</p>
+    <button id = "btn3">Выполнено</button>
+    <script>
+    
+        var arr = [1,2,3,4];
+        var tel = '+380631312876';
+        
+        var obj= {};
+        async function f(ob) {
+            console.log(ob);
+                let response = fetch('list.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json;charset=utf-8'
+                    },
+                    body: JSON.stringify(ob)
+                });
+                let resp = await response;
+                return resp;
+            }
+    
+    
+        function sndresFnc(){
+            console.log(inpt_name.value);
+            console.log(inpt_name);
+            obj.name = "name";
+            obj.tel = "1234567";
+            obj.arr = arr;
+            let resp = f(obj);
+            resp.then(onFulfilled);
+            // console.log(resp);
+            console.log(obj);
+        }
+        //sndresFnc();
+        function clck(){
+            console.log("clck");
+        }
+    
+        function onFulfilled(dta){
+            console.log("onFulfilled");
+            console.log(dta);
+        }
+    
+    function sndFnc1(){
+        console.log("btn1");
+
+        obj.name = "name";
+        obj.tel = "1234567";
+        obj.arr = arr;
+        let resp = f(obj);
+        resp.then(onFulfilled);
+        // console.log(resp);
+        console.log(obj);
+        btn1.classList.add("green");
+    }
+    function sndFnc2(){
+        console.log("btn2");
+        btn2.classList.add("green");
+    }
+    function sndFnc3(){
+        console.log("btn3");
+        btn3.classList.add("green");
+    }
+
+
+
+        btn1.addEventListener("click",sndFnc1);
+        btn2.addEventListener("click",sndFnc2);
+        btn3.addEventListener("click",sndFnc3);
+        </script>
+
+
+</body>
+</html>

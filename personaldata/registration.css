@@ -1,0 +1,26 @@
+body{
+    font-family:"courier",sans-serif;
+}
+.one{
+    color:grey;
+    margin-right: 10px;
+    color: white;
+}
+.row{
+    margin: 10px;
+    padding: 5px;
+}
+.buy1{
+    border:1px solid gray;
+    border-radius:10px;
+    padding: 5px 5px;
+    margin: 10px;
+    background: white;
+}
+p{
+    border: 1px solid #53b8e4;
+    background: #23d0ec;;
+    width: 359px;
+    padding: 26px;
+    border-radius: 10px;
+}

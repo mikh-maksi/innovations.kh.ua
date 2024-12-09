@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<style>
+#example_j{border:solid 1px #999; margin:5px; padding:10px}
+img{
+  width:300px;
+}
+.tbl td{border:1px solid;}
+</style>
+
+<script>
+    var table = document.createElement('table');
+    table.className = "tbl";
+    var texts = ['Имя','Фамилия','Возраст','Телефон','Email','Фото'];
+    var tr = document.createElement('tr');   
+    for (i=0;i<=5;i++){
+      td = document.createElement('td');
+      td.appendChild(document.createTextNode(texts[i]));
+      tr.appendChild(td);
+    }
+     
+    table.appendChild(tr);
+  
+//  query = $("#inpt").val();
+//    console.log(query);
+    $.getJSON("http://innovations.kh.ua/personaldata/back/backpersonalall.php",
+    function(data){
+    console.log(data);
+      $.each(data, function(i,item){
+        console.log(item);
+        var tr = document.createElement('tr');   
+
+        var img1 = document.createElement('img');
+        img1.src = "uploads/"+item.picture;
+        td = document.createElement('td');
+        td.appendChild(document.createTextNode(item.name));
+        tr.appendChild(td);
+
+        td = document.createElement('td');
+        td.appendChild(document.createTextNode(item.lastname));
+        tr.appendChild(td);
+
+        td = document.createElement('td');
+        td.appendChild(document.createTextNode(item.age));
+        tr.appendChild(td);
+
+        td = document.createElement('td');
+        td.appendChild(document.createTextNode(item.tel));
+        tr.appendChild(td);
+
+        td = document.createElement('td');
+        td.appendChild(document.createTextNode(item.email));
+        tr.appendChild(td);
+
+        td = document.createElement('td');
+        td.appendChild(img1);
+        tr.appendChild(td);
+
+        table.appendChild(tr);
+      });
+    });
+
+            document.body.appendChild(table);
+          
+    
+    
+    //HTML/CSS
+    </script>
+    
+</body>
+</html>
